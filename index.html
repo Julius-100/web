@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --accent-color: #6366f1; /* Modern Indigo */
+            --card-bg: #f9fafb;
+            
+        }
+
+        [data-theme='dark'] {
+            --bg-color: #0f172a;
+            --text-color: #f8fafc;
+            --accent-color: #818cf8;
+            --card-bg: #1e293b;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Times New Roman';
+            margin: 0;
+            transition: background-color 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 10%;
+            border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+           
+        }
+        a {
+            text-decoration: none;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            font-family: 'Times New Roman';
+            color: var(--accent-color);
+                        
+        }
+        .logo:hover {
+            opacity: 0.8;
+            cursor: pointer;
+        }
+
+        #theme-toggle {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: opacity 0.2s;
+            font-family: 'Times New Roman';
+        }
+
+        #theme-toggle:hover {
+            opacity: 0.8;
+        }
+
+        header {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-family: 'Times New Roman';
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            line-height: 1.6;
+            font-family: 'Times New Roman';
+            opacity: 0.8;
+        }
+        .cta-btn a {
+            color: white;
+        }
+        .cta-btn {
+            margin-top: 2rem;
+            background-color: var(--accent-color);
+            font-family: 'Times New Roman', Times, serif;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+            transition: transform 0.2s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo" >
+            <a href="https://sites.google.com/view/juliuschukwubuezeemmanuelva?usp=sharing" target="_blank">MY PORTFOLIO</a>
+        </div>
+        <button id="theme-toggle">Toggle Mode</button>
+    </nav>
+
+    <header>
+        <h1>Hello, I'm Julius</h1>
+        <p>I am a Certified Virtual Assistant, Graphic Designer and Novice Python Programmer.
+            <br><i>Explore my Website</i>
+        </p>
+        <button class="cta-btn"><a href="lets_connect.html">Let's Connect</a></button>
+        <!-- onclick="alert('Hello! Lets Talk!')"-->
+    </header>
+
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        
+        // Logic to toggle the 'data-theme' attribute on the root <html> element
+        toggleBtn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            
+            if (currentTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        });
+    </script>
+</body>
+</html>
